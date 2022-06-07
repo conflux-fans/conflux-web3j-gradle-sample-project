@@ -9,15 +9,21 @@ import org.jetbrains.annotations.NotNull;
 public class Main {
     static Cfx cfx = Cfx.create(Contants.TEST_NET_RPC);
 
-    static Account account = Account.create(cfx, Contants.PRIVATE_KEY);
+    static Cfx mainCfx = Cfx.create(Contants.MAIN_NET_RPC);
+
+    static Account account = Account.create(mainCfx, Contants.PRIVATE_KEY);
 
     public static void main(String[] args) throws Exception {
         try {
             System.out.println("Hello conflux-web3j");
-    //        Basics.run(Contants.TEST_NET_RPC, Contants.PRIVATE_KEY);
-    //        SendingTx.run(cfx, account);
+//            Basics.run(Contants.TEST_NET_RPC, Contants.PRIVATE_KEY);
+//            SendingTx.run(cfx, account);
 //            ContractInteraction.run(cfx, account);
-            ABI.event();
+//            ABI.event();
+//            QuickSendTx.quickSendTx(mainCfx, account);
+//            PubSub.subLog();
+//            ABI.decodeDynamicArray();
+            ABI.decodeTxData();
         } catch(Exception e) {
             e.printStackTrace();
         }
